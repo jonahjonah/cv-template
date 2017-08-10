@@ -7,7 +7,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{my_cv}
 
-\RequirePackage[top=.75in, right=.75in, bottom=.75in, left=.75in]{geometry}
+\RequirePackage[top=.5in, right=.5in, bottom=.5in, left=.5in]{geometry}
 \RequirePackage{changepage}
 \RequirePackage{titlesec}
 \RequirePackage{setspace}
@@ -25,7 +25,7 @@
       \huge{#1}
     }
   }
-  \vspace{.75em}
+  \vspace{.5em}
 }
 
 
@@ -37,8 +37,8 @@
       \sffamily{
         \color{darkgray}{
           #1 \hspace{.25em} $\cdot$ \hspace{.25em} #2 \hspace{.25em} $\cdot$ \hspace{.25em}
-          #3 \hspace{.25em} $\cdot$ \hspace{.25em} #4
-      }
+          #3 \hspace{.25em} $\cdot$ \hspace{.25em} #4 
+      }\vspace{0em}
     }
   }
 }
@@ -48,10 +48,10 @@
 % Section
 % 
 \titleformat{\section}
-{\sffamily\Large}
+{\sffamily\Large \vspace{-1em}}
 {}{0em}           % prefix a string to all sections (default: none)
 {}                % code before the heading (default: none)
-[\vspace{-.2em}]  % control margin under header
+[\vspace{-.25em}]  % control margin under header
 
 
 %% 
@@ -59,8 +59,9 @@
 % 
 \newcommand{\entryA}[2] {
   \sffamily{
-    \noindent \hspace{1em} #1 \hfill \small{\color{gray}{#2}}
-    \vspace{-.5em}
+    \vspace{-.6em}
+    \noindent \hspace{1em} \textbf{#1} \hfill \small{\color{gray}{#2}}
+    \vspace{-.6em}
   }
 }
 
@@ -70,8 +71,9 @@
 % 
 \newcommand{\entryB}[3] {
   \sffamily{
-        \noindent \hspace{1em} #1 \color{gray}{\ $\cdot$\ } \color{darkgray}{#2} \hfill \small{\color{gray}{#3}}
-    \vspace{-.5em}
+    \vspace{-.6em}
+    \noindent \hspace{1em} \textbf{#1} \color{gray}{\ $\cdot$\ } \color{darkgray}{#2} \hfill \small{\color{gray}{#3}}
+    \vspace{-.6em}
   }
 }
 
@@ -79,12 +81,12 @@
 %% 
 % Entry Detail
 % 
-\setlist[1]{itemsep=-.2em,leftmargin=2.75em}
+\setlist[1]{itemsep=-.2em,leftmargin=2em}
 \newcommand{\entrydetail}[1] {
   \small{
     \item
-    \begin{adjustwidth}{0em}{8.25em}  % set left and right margins
-      \color{gray}\sffamily{#1}
+    \begin{adjustwidth}{1em}{10em}  % set left and right margins
+      \color{darkgray}\sffamily{#1}
     \end{adjustwidth}
   }
 }
